@@ -1,0 +1,13 @@
+:root {
+  --mb-16: 16px;
+  --mb-64: 64px;
+  --mb-96: 96px;
+}
+
+.l-block {
+  display: block;
+}
+
+.section-article-body {
+  margin-bottom: var(--mb-96);
+}
