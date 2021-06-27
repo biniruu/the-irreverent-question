@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * Bio component that queries for data
  * with Gatsby's useStaticQuery component

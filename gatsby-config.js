@@ -2,11 +2,11 @@ module.exports = {
   siteMetadata: {
     title: `신을 믿는 이에게`,
     author: {
-      name: `익명`,
+      name: `익명의 글쓴이`,
       summary: `당신의 신앙은 이성적이고 합리적인가요?`,
     },
     description: `이성적이고 합리적인 신앙을 가졌다 여기는 그리스도교인에게 묻고 싶습니다.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://theiq.netlify.app/`,
     // social: {
     //   twitter: `kylemathews`,
     // },
