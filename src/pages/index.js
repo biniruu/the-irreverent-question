@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 import Bio from '../components/bio'
 import Layout from '../components/layout'
@@ -9,6 +10,11 @@ import Seo from '../components/seo'
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+
+  const trackEvent = title => {
+    console.log('track event fired', title)
+    trackCustomEvent({ category: 'article_list', label: title })
+  }
 
   if (posts.length === 0) {
     return (
@@ -36,7 +42,7 @@ const BlogIndex = ({ data, location }) => {
               <article className="post-list-item" itemScope itemType="http://schema.org/Article">
                 <header>
                   <h2>
-                    <Link to={post.fields.slug} itemProp="url">
+                    <Link to={post.fields.slug} itemProp="url" onClick={e => trackEvent(title)}>
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
