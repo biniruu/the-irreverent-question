@@ -8,9 +8,11 @@ module.exports = {
     'eslint-config-prettier',
     'eslint:recommended',
     // 'plugin:@typescript-eslint/recommended', // Typescript Lint 규칙 모음
-    // "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    // 'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:jsx-a11y/recommended',
     // 'plugin:nuxt/recommended',
     'plugin:prettier/recommended',
+    'plugin:react/recommended',
     // 'plugin:vue/strongly-recommended',
     // 'standard',
     // 'tsconfig.json', // project: 'tsconfig.json'을 활성화 하기 위해 꼭 필요
@@ -21,9 +23,9 @@ module.exports = {
   // parser: '@typescript-eslint/parser',
   parser: 'babel-eslint',
   parserOptions: {
-    // ecmaFeatures: {
-    //   jsx: true,
-    // },
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: 6,
     // project: 'tsconfig.json', // parser: @typescript-eslint/parsergst를 활성화 하기 위해 꼭 필요
     sourceType: 'module',
@@ -31,6 +33,7 @@ module.exports = {
   plugins: [
     // '@typescript-eslint',
     'prettier',
+    'react-hooks',
     // 'vue',
   ],
   root: true,
@@ -60,7 +63,12 @@ module.exports = {
     'no-extra-semi': 'error',
     'no-inner-declarations': 'off',
     'no-new-object': 'error',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': [
+      'warn',
+      {
+        args: 'after-used',
+      },
+    ],
     'no-var': 'error',
     'object-curly-spacing': ['warn', 'always'], // 중괄호 안에 간격 삽입
     'prefer-const': 'error',
@@ -75,9 +83,28 @@ module.exports = {
       },
     ],
     quotes: ['warn', 'single', { allowTemplateLiterals: true }],
+    'react/prop-types': [
+      'warn',
+      {
+        // ignore: [], // optional array of props name to ignore during validation
+        // customValidators: [], // optional array of validators used for propTypes validation
+        skipUndeclared: true, // optional boolean to only error on components that have a propTypes block declared
+      },
+    ],
+    'react/no-unescaped-entities': [
+      'error',
+      {
+        forbid: ['"'],
+      },
+    ],
     'space-before-function-paren': 'off', // allow debugger during development
     // 'vue/v-bind-style': ['warn', 'shorthand'],
     // 'vue/require-v-for-key': 'warn',
     // 'vue/no-unused-components': 'warn',
+  },
+  settings: {
+    react: {
+      version: 'detect', // eslint-plugin-react가 자동 리액트버전탐지
+    },
   },
 }
