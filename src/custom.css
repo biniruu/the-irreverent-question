@@ -1,5 +1,6 @@
 :root {
   --mb-16: 16px;
+  --mb-32: 32px;
   --mb-64: 64px;
   --mb-96: 96px;
 }
@@ -8,6 +9,16 @@
   display: block;
 }
 
+/* article */
 .section-article-body {
+  margin-bottom: var(--mb-96);
+}
+
+/* main */
+.post-list-item {
+  margin-top: var(--mb-64);
+}
+
+.main {
   margin-bottom: var(--mb-96);
 }
