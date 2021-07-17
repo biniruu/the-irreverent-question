@@ -1,9 +1,10 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
-import Bio from '../components/bio'
+// eslint-disable-next-line no-unused-vars
+// import Bio from '../components/bio'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
@@ -12,7 +13,6 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
 
   const trackEvent = title => {
-    console.log('track event fired', title)
     trackCustomEvent({ category: 'article_list', label: title })
   }
 
@@ -33,12 +33,12 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       {/* <Bio /> */}
-      <ol style={{ listStyle: `none` }}>
+      <ol className="list" style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <li key={post.fields.slug}>
+            <li className="item" key={post.fields.slug}>
               <article className="post-list-item" itemScope itemType="http://schema.org/Article">
                 <header>
                   <h2>
