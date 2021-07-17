@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 // eslint-disable-next-line no-unused-vars
-import Bio from '../components/bio'
+// import Bio from '../components/bio'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
@@ -13,8 +13,6 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
 
   const trackEvent = title => {
-    debugger
-    console.log('track event fired', title)
     trackCustomEvent({ category: 'article_list', label: title })
   }
 
