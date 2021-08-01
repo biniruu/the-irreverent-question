@@ -1,5 +1,6 @@
 :root {
   --mb-16: 16px;
+  --mb-18: 18px;
   --mb-32: 32px;
   --mb-64: 64px;
   --mb-96: 96px;
@@ -38,5 +39,11 @@
 
   .main-heading {
     font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  blockquote {
+    font-size: var(--mb-18);
   }
 }
