@@ -55,7 +55,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "https://github.com/biniruu/the-irreverent-question"
+    "url": "git+https://github.com/biniruu/the-irreverent-question.git"
   },
   "scripts": {
     "build": "gatsby build",
